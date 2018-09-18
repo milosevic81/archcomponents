@@ -1,0 +1,42 @@
+{
+  "created": 1536749751000,
+  "duration": 7200000,
+  "id": "254610194",
+  "name": "Mobile Development od A do X",
+  "rsvp_limit": 90,
+  "status": "upcoming",
+  "time": 1537891200000,
+  "local_date": "2018-09-25",
+  "local_time": "18:00",
+  "updated": 1536765850000,
+  "utc_offset": 7200000,
+  "waitlist_count": 0,
+  "yes_rsvp_count": 31,
+  "venue": {
+    "id": 23682180,
+    "name": "Nova Iskra",
+    "lat": 44.811668395996094,
+    "lon": 20.45646095275879,
+    "repinned": true,
+    "address_1": "Gavrila Principa 43",
+    "city": "Beograd",
+    "country": "rs",
+    "localized_country_name": "Serbia"
+  },
+  "group": {
+    "created": 1517952919000,
+    "name": "InterVenture Meetups",
+    "id": 27401783,
+    "join_mode": "open",
+    "lat": 44.83000183105469,
+    "lon": 20.5,
+    "urlname": "InterVenture-Meetups",
+    "who": "Members",
+    "localized_location": "Belgrade, Serbia",
+    "region": "en_US",
+    "timezone": "Europe/Belgrade"
+  },
+  "link": "https://www.meetup.com/InterVenture-Meetups/events/254610194/",
+  "description": "<p>Dodjite da cujete prezentacije o novom arhitekturalnom trendu pravljenja Android aplikacija, kako Kotlin izgleda pored Swifta i da li su sada najbolji drugari, kako se za Android TV kreiraju aplikacije i koja pravila vaze za dizajn tih aplikacija. Naravno, price su zamisljene da budu samo deo okupljanja, ali ce se dijalog nastaviti i kasnije, uz laki snek i pice.</p> <p>Budite u Novoj Iskri 25.09. od 18h da se druzimo i da upoznate jedan deo domace mobilne inzenjerske zajednice.</p> ",
+  "visibility": "public"
+}
