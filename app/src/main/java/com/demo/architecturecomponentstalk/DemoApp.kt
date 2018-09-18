@@ -11,10 +11,12 @@ class DemoApp : Application() {
 
     companion object {
         lateinit var DB: MeetupDb
+        val appExecutors = AppExecutors()
     }
 
     override fun onCreate() {
         super.onCreate()
+
         DB = Room.databaseBuilder(applicationContext, MeetupDb::class.java, "demodb").build()
     }
 }
