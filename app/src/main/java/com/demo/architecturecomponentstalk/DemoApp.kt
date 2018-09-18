@@ -17,6 +17,6 @@ class DemoApp : Application() {
     override fun onCreate() {
         super.onCreate()
 
-        DB = Room.databaseBuilder(applicationContext, MeetupDb::class.java, "demodb").build()
+        DB = Room.databaseBuilder(applicationContext, MeetupDb::class.java, "demo.db").build()
     }
 }
