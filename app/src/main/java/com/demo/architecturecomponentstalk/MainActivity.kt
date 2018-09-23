@@ -1,9 +1,11 @@
 package com.demo.architecturecomponentstalk
 
-import android.arch.lifecycle.ViewModelProviders
-import android.databinding.DataBindingUtil
 import android.os.Bundle
-import android.support.v7.app.AppCompatActivity
+import androidx.appcompat.app.AppCompatActivity
+import androidx.databinding.DataBindingUtil
+import androidx.lifecycle.Observer
+import androidx.lifecycle.ViewModelProviders
+import com.demo.architecturecomponentstalk.adapter.EventsAdapter
 import com.demo.architecturecomponentstalk.databinding.ActivityMainBinding
 
 class MainActivity : AppCompatActivity() {
@@ -14,5 +16,12 @@ class MainActivity : AppCompatActivity() {
         val viewModel = ViewModelProviders.of(this).get(MeetupViewModel::class.java)
         binding.viewModel = viewModel
         binding.setLifecycleOwner(this)
+
+        val adapter = EventsAdapter()
+        binding.eventsList.adapter = adapter
+
+        viewModel.events.observe(this, Observer { events ->
+            if (events != null) adapter.submitList(events)
+        })
     }
 }

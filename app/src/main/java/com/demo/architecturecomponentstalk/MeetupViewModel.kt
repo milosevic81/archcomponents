@@ -1,8 +1,8 @@
 package com.demo.architecturecomponentstalk
 
 import android.app.Application
-import android.arch.lifecycle.AndroidViewModel
-import android.arch.lifecycle.LiveData
+import androidx.lifecycle.AndroidViewModel
+import androidx.lifecycle.LiveData
 import com.demo.architecturecomponentstalk.db.entity.MeetupEvent
 
 class MeetupViewModel(application: Application) : AndroidViewModel(application) {

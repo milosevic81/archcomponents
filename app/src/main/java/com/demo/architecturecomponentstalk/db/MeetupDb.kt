@@ -1,8 +1,8 @@
 package com.demo.architecturecomponentstalk.db
 
-import android.arch.persistence.room.Database
-import android.arch.persistence.room.DatabaseConfiguration
-import android.arch.persistence.room.RoomDatabase
+import androidx.room.Database
+import androidx.room.DatabaseConfiguration
+import androidx.room.RoomDatabase
 import com.demo.architecturecomponentstalk.DemoApp
 import com.demo.architecturecomponentstalk.api.MeetupApi
 import com.demo.architecturecomponentstalk.db.entity.MeetupEvent
@@ -26,9 +26,9 @@ abstract class MeetupDb : RoomDatabase() {
      */
     private fun reloadEvents() {
         DemoApp.appExecutors.diskIO().execute {
-            clearAllTables()
-            val events = MeetupApi.getEvents("InterVenture-Meetups")
+            val events = MeetupApi.getEventsByUrlName("InterVenture-Meetups")
             if (events != null) {
+                clearAllTables()
                 for (ev in events) {
                     meetupEventDao().insert(MeetupEvent(ev))
                 }

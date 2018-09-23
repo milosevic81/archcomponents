@@ -1,5 +1,6 @@
 package com.demo.architecturecomponentstalk.api
 
+import android.location.Location
 import com.demo.architecturecomponentstalk.api.json.MeetupEventJson
 import retrofit2.Call
 import retrofit2.Retrofit
@@ -12,9 +13,9 @@ import retrofit2.http.Query
 interface MeetupApiInterface {
 
     @GET("{urlname}/events")
-    fun getEvents(@Path("urlname") urlname: String,
-                  @Query("key") key: String,
-                  @Query("sign") sign: Boolean)
+    fun getEventsByUrl(@Path("urlname") urlname: String,
+                       @Query("key") key: String,
+                       @Query("sign") sign: Boolean)
             : Call<List<MeetupEventJson>>
 
     @GET("{urlname}/events/{id}")
@@ -36,8 +37,8 @@ object MeetupApi {
             .build()
             .create(MeetupApiInterface::class.java)
 
-    fun getEvents(urlname: String): List<MeetupEventJson>? =
-            api.getEvents(urlname, apiKey, true).execute().body()
+    fun getEventsByUrlName(urlname: String): List<MeetupEventJson>? =
+            api.getEventsByUrl(urlname, apiKey, true).execute().body()
 
     fun getEvent(urlname: String, id: String): MeetupEventJson? {
         val call = api.getEventById(urlname, id, apiKey, true)

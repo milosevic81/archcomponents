@@ -1,7 +1,7 @@
 package com.demo.architecturecomponentstalk
 
 import android.app.Application
-import android.arch.persistence.room.Room
+import androidx.room.Room
 import com.demo.architecturecomponentstalk.db.MeetupDb
 
 /**
@@ -17,6 +17,7 @@ class DemoApp : Application() {
     override fun onCreate() {
         super.onCreate()
 
-        DB = Room.databaseBuilder(applicationContext, MeetupDb::class.java, "demo.db").build()
+        DB = Room.databaseBuilder(applicationContext, MeetupDb::class.java, "demo.db")
+                .fallbackToDestructiveMigration().build()
     }
 }
