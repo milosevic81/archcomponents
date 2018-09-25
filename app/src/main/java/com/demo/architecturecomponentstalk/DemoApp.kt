@@ -9,14 +9,17 @@ import com.demo.architecturecomponentstalk.db.MeetupDb
  */
 class DemoApp : Application() {
 
+    lateinit var DB: MeetupDb
+
     companion object {
-        lateinit var DB: MeetupDb
         val appExecutors = AppExecutors()
     }
 
     override fun onCreate() {
         super.onCreate()
 
-        DB = Room.databaseBuilder(applicationContext, MeetupDb::class.java, "demo.db").build()
+        DB = Room.databaseBuilder(applicationContext,
+                MeetupDb::class.java, "demo.db")
+                .build()
     }
 }

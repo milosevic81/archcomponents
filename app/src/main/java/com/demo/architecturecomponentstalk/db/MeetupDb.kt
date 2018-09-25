@@ -15,7 +15,9 @@ import com.demo.architecturecomponentstalk.db.entity.MeetupEvent
         exportSchema = false
 )
 abstract class MeetupDb : RoomDatabase() {
+
     abstract fun meetupEventDao(): MeetupEventDao
+
     override fun init(configuration: DatabaseConfiguration) {
         super.init(configuration)
         reloadEvents()
